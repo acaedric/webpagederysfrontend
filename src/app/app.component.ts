@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cliente';
+  title = '4DATA || Encuentra el puesto o la persona adecuada en este mundo digital';
 }

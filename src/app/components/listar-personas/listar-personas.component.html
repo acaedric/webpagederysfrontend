@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="container mt-5">
+   <div class="row">
+       <div class="col-lg-12 ">
+           <div class="card">
+               <div class="card-body">
+                   <span class="titulo">
+                        LISTADO DE PERSONAS
+                   </span>
+                   <button class="btn btn-success float-end" routerLink="/registrar-postulante">NUEVO</button>
+                   <table *ngIf="listPersonas.length > 0" class="table table-striped mt-4">
+                       <thead>
+                           <th scope="col">#</th>
+                           <th scope="col">doc_id</th>
+                           <th scope="col">apellidos</th>
+                           <th scope="col">nombre_pila</th>
+                           <th scope="col">foto</th>
+                           <th scope="col">fec_nac</th>
+                           <th scope="col">sexo</th>
+                           <th scope="col">direcc_email</th>
+                           <th scope="col">nombre_usuario</th>
+                           <th scope="col">contraseña</th>
+                           <th scope="col">rol</th>
+                           <th scope="col">país</th>
+                           <th scope="col">ciudad</th>
+                           <th scope="col"></th>
+                       </thead>
+                       <tbody>
+                           <tr *ngFor="let persona of listPersonas">
+                               <th scope="row">1</th>
+                               <td>{{persona.doc_id}}</td>
+                               <td>{{persona.apellidos}}</td>
+                               <td>{{persona.nombre_pila}}</td>
+                               <td>{{persona.foto}}</td>
+                               <td>{{persona.fec_nac}}</td>
+                               <td>{{persona.sexo}}</td>
+                               <td>{{persona.direcc_email}}</td>
+                               <td>{{persona.nombre_usuario}}</td>
+                               <td>{{persona.password}}</td>
+                               <td>{{persona.rol}}</td>
+                               <td>{{persona.pais}}</td>
+                               <td>{{persona.ciudad}}</td>
+                               <td>
+                                    <i class="fas fa-edit text-primary"></i>
+                                    <i class="fas fa-trash text-danger"></i>
+                                </td>
+                           </tr>
+                           
+                       </tbody>
+                   </table>
+                   <h5 *ngIf="listPersonas.length == 0" style="text-align:start; margin-top:10px;">No hay personas para mostrar</h5>
+               </div>
+           </div>
+       </div>
+   </div> 
+</div>
