@@ -12,11 +12,10 @@ mat-sidenav{
     padding:16px;
     text-align:center;
 }
-
-
 .content{
     height: calc(100vh - 98px);
     margin:16px;
+    margin-left:32px;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -32,12 +31,12 @@ mat-sidenav-container {
 .menu-button {
     width:100%;
     display:flex;
-    margin-bottom: 5px;
     align-items: center;
     justify-content: flex-start;
     font-size:1rem;
-
     
+    
+    margin-bottom:5px;
 }
 mat-icon {
     margin-right:8px;

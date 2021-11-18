@@ -3,7 +3,7 @@ export class Postulante {
     lugar_residencia: string;
     antecedentes_penales: string;
     curriculum_vitae: string;
-    situacion_laboral_actual: Date;
+    situacion_laboral_actual: string;
     tipo_contrato_deseado: string;
     movilidad: string;
     doc_id: string;
@@ -14,7 +14,7 @@ export class Postulante {
         lugar_residencia: string,
         antecedentes_penales: string,
         curriculum_vitae: string,
-        situacion_laboral_actual: Date,
+        situacion_laboral_actual: string,
         tipo_contrato_deseado: string,
         movilidad: string,
         doc_id: string,

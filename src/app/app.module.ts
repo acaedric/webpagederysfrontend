@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule} from '@angular/common/http';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { ToastrModule } from 'ngx-toastr';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
-import { HttpClientModule} from '@angular/common/http';
 
 
 //Components
@@ -17,7 +22,7 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { ListarPersonasComponent } from './components/listar-personas/listar-personas.component';
 import { SharedModule } from './shared/shared.module';
 import { ProfileComponent } from './components/profile/profile.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +38,14 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

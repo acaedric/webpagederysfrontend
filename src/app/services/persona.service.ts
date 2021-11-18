@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Persona } from '../models/persona';
+import { Profile } from '../models/profile';
 import { Usuariologin } from '../models/usuariologin';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class PersonaService {
   url = 'http://localhost:3000/api/personas/listadepersonas/';
   url2 = 'http://localhost:3000/api/personas/registropostulante/';
   url3 = 'http://localhost:3000/api/personas/login';
-  url4 = 'http://localhost:3000/api/personas/profile/';
+  url4 = 'http://localhost:3000/api/personas/profile';
   constructor(private http: HttpClient) { }
 
   getPersonas(): Observable<any> {
@@ -25,6 +26,10 @@ export class PersonaService {
   
   login(usuarioypassword: Usuariologin): Observable<any> {
     return this.http.post(this.url3, usuarioypassword)
+  }
+
+  profile(id: string): Observable<any> {
+    return this.http.get(`${this.url4}/${id}`)
   }
 
 /*   findOne(id: number): Observable<Usuariologin> {
