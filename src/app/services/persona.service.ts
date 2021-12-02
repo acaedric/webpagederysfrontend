@@ -1,5 +1,5 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { Persona } from '../models/persona';
@@ -14,6 +14,7 @@ export class PersonaService {
   url2 = 'http://localhost:3000/api/personas/registropostulante/';
   url3 = 'http://localhost:3000/api/personas/login';
   url4 = 'http://localhost:3000/api/personas/profile';
+  @Output() disparadorDePostulante: EventEmitter<any> = new EventEmitter();
   constructor(private http: HttpClient) { }
 
   getPersonas(): Observable<any> {
@@ -31,6 +32,7 @@ export class PersonaService {
   profile(id: string): Observable<any> {
     return this.http.get(`${this.url4}/${id}`)
   }
+
 
 /*   findOne(id: number): Observable<Usuariologin> {
     return this.http.get(this.url4 + id).pipe(

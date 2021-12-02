@@ -8,11 +8,11 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  selector: 'app-profiletecnico',
+  templateUrl: './profiletecnico.component.html',
+  styleUrls: ['./profiletecnico.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfiletecnicoComponent implements OnInit {
   titulo = 'Profile de usuario';
   nombre = 'Nombre del usuario';
   nombre_usuario: string | null;
@@ -21,14 +21,13 @@ export class ProfileComponent implements OnInit {
 
   @ViewChild(MatSidenav) 
   sidenav!: MatSidenav;
-
-  constructor(private observer: BreakpointObserver, private aRouter: ActivatedRoute, private _personaService: PersonaService, private _postulanteService: PostulanteService) { 
+  constructor(private observer: BreakpointObserver, private aRouter: ActivatedRoute, private _personaService: PersonaService) { 
     this.nombre_usuario = this.aRouter.snapshot.paramMap.get('id')!;
   }
 
   ngOnInit(): void {
-    
     this.userprofile();
+
   }
 
   ngAfterViewInit() {

@@ -21,21 +21,26 @@ import { RegistrarPostulanteComponent } from './components/registrar-postulante/
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { ListarPersonasComponent } from './components/listar-personas/listar-personas.component';
 import { SharedModule } from './shared/shared.module';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ProfilepostulanteComponent } from './components/profilepostulante/profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProfiletecnicoComponent } from './components/profiletecnico/profiletecnico.component';
+import { ConvocatoriasComponent } from './components/profilepostulante/convocatorias/convocatorias.component';
+import { PerfilComponent } from './components/profilepostulante/perfil/perfil.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrarPostulanteComponent,
     IniciarSesionComponent,
     ListarPersonasComponent,
-    ProfileComponent,
+    ProfilepostulanteComponent,
+    ProfiletecnicoComponent,
+    ConvocatoriasComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     ToastrModule.forRoot(),
     HttpClientModule,
     SharedModule,

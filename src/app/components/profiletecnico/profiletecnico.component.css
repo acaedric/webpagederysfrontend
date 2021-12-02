@@ -22,7 +22,7 @@ mat-sidenav{
     align-items:center;
     background-image: url('/assets/images/fondogeneralseigaha.png');
     font-size:2rem;
-    color:lightgray;
+    color:black;
 
     border-radius: 10px;
 }

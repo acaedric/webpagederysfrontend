@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Profile } from 'src/app/models/profile';
 import { Usuariologin } from 'src/app/models/usuariologin';
 import { PersonaService } from 'src/app/services/persona.service';
 
@@ -12,6 +13,7 @@ import { PersonaService } from 'src/app/services/persona.service';
 })
 export class IniciarSesionComponent implements OnInit {
   usuarioForm: FormGroup;
+  profile!: Profile ;
   constructor(private _personaService: PersonaService, private fb: FormBuilder, private router: Router, private toastr: ToastrService) {
     this.usuarioForm = this.fb.group({
       nombre_usuario : ['', Validators.required],
@@ -31,12 +33,20 @@ export class IniciarSesionComponent implements OnInit {
     console.log(usuarioypassword);
 
     this._personaService.login(usuarioypassword).subscribe(data =>{
+      this.profile = data;
+      console.log(this.profile.rol);
+      if (this.profile.rol === 'postulante') {
+        this.toastr.success('Datos validados', 'Se ha iniciado sesión correctamente!');
+        this.router.navigate(['/postulante/' + usuarioypassword.nombre_usuario]);
+      } else if (this.profile.rol === 'tecnico') {
+        this.toastr.success('Datos validados', 'Se ha iniciado sesión correctamente!');
+        this.router.navigate(['/tecnico/' + usuarioypassword.nombre_usuario]);
+      }
     }, error => {
       console.log(error);
     });
 
-    this.toastr.success('Datos validados', 'Se ha iniciado sesión correctamente!');
-    this.router.navigate(['/profile/' + usuarioypassword.nombre_usuario]);
+    
 
   }
 }

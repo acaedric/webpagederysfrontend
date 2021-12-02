@@ -1,0 +1,85 @@
+<div class="container">
+    <!--Section: Content-->
+    <section>
+        
+        <div class="row">
+            <div class="row">
+                <p class="h2"><strong>CONVOCATORIAS de {{nombre_usuario}}</strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <select class="form-select" aria-label="tipopuestolaboral">
+                    <option selected>Tipo de Puesto Laboral</option>
+                    <option>Ing. Software</option>
+                    <option>Analista de Sistemas</option>
+                    <option>Analista SEO</option>
+                    <option>Copywriter</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-select" aria-label="tipopuestolaboral">
+                    <option selected>Más recientes</option>
+                    <option>Más antiguos</option>
+                    <option>Más cercanos</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-danger">Reporte de Convocatorias</button>
+            </div>
+            <div class="col-3">
+                <button type="button"  class="btn btn-primary" style="background-color:rgb(35, 169, 223)">Añadir Nueva Convocatoria</button>
+            </div>
+        </div>
+        <div class="row mt-4" *ngFor="let convocatoria of listConvocatorias">
+            <div class="col-4">
+                <div class="row">
+                    <p class="text-uppercase">{{convocatoria.nombre}}</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>place</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>{{convocatoria.direccion_empresa}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="row">
+                    <p>Fase: {{convocatoria.estado}}</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>access_time</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>Jornada: {{convocatoria.tipo_jornada}}</span>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>work</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>Vacantes disponibles: </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row mt-4 mb-4">
+                    <button class="btn btn-secondary">Detalles</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary">Editar</button>
+                </div>
+                
+            </div>
+
+        </div>
+        
+        
+        
+
+    </section>
+</div>

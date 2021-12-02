@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ListarPersonasComponent } from './components/listar-personas/listar-personas.component';
-import { ProfileComponent } from './components/profile/profile.component';
+import { ConvocatoriasComponent } from './components/profilepostulante/convocatorias/convocatorias.component';
+import { PerfilComponent } from './components/profilepostulante/perfil/perfil.component';
+import { ProfilepostulanteComponent } from './components/profilepostulante/profile.component';
+import { ProfiletecnicoComponent } from './components/profiletecnico/profiletecnico.component';
 import { RegistrarPostulanteComponent } from './components/registrar-postulante/registrar-postulante.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -14,8 +17,22 @@ const routes: Routes = [
   {path: 'registrar-postulante', component: RegistrarPostulanteComponent},
   {path: 'editar-postulante/:id', component: RegistrarPostulanteComponent},
   {path: 'login', component: IniciarSesionComponent},
-  {path: 'profile/:id', component: ProfileComponent},
+  {
+    path: 'postulante/:id', 
+    component: ProfilepostulanteComponent,
+    children: [
+      {
+        path: 'convocatorias',
+        component: ConvocatoriasComponent
+      },
+      {
+        path: 'perfil',
+        component: PerfilComponent
+      }
+    ]
+  },
   {path: 'profile', component: SidebarComponent},
+  {path: 'tecnico/:id', component: ProfiletecnicoComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 
