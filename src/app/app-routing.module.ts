@@ -6,7 +6,18 @@ import { ListarPersonasComponent } from './components/listar-personas/listar-per
 import { ConvocatoriasComponent } from './components/profilepostulante/convocatorias/convocatorias.component';
 import { PerfilComponent } from './components/profilepostulante/perfil/perfil.component';
 import { ProfilepostulanteComponent } from './components/profilepostulante/profile.component';
+import { ConvocatoriastecnicoComponent } from './components/profiletecnico/convocatoriastecnico/convocatoriastecnico.component';
+import { PerfiltecnicoComponent } from './components/profiletecnico/perfiltecnico/perfiltecnico.component';
 import { ProfiletecnicoComponent } from './components/profiletecnico/profiletecnico.component';
+import { PuestoslaboralestecnicoComponent } from './components/profiletecnico/puestoslaboralestecnico/puestoslaboralestecnico.component';
+import { CompetenciaslaboralesComponent } from './components/profiletecnico/selecciontecnico/competenciaslaborales/competenciaslaborales.component';
+import { ContratacionComponent } from './components/profiletecnico/selecciontecnico/contratacion/contratacion.component';
+import { EntrevistafinalComponent } from './components/profiletecnico/selecciontecnico/entrevistafinal/entrevistafinal.component';
+import { ExamenmedicoComponent } from './components/profiletecnico/selecciontecnico/examenmedico/examenmedico.component';
+import { PruebapersonalizadaComponent } from './components/profiletecnico/selecciontecnico/pruebapersonalizada/pruebapersonalizada.component';
+import { PruebaspsicologicasComponent } from './components/profiletecnico/selecciontecnico/pruebaspsicologicas/pruebaspsicologicas.component';
+import { SelecciontecnicoComponent } from './components/profiletecnico/selecciontecnico/selecciontecnico.component';
+import { TestconocimientosComponent } from './components/profiletecnico/selecciontecnico/testconocimientos/testconocimientos.component';
 import { RegistrarPostulanteComponent } from './components/registrar-postulante/registrar-postulante.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -32,7 +43,59 @@ const routes: Routes = [
     ]
   },
   {path: 'profile', component: SidebarComponent},
-  {path: 'tecnico/:id', component: ProfiletecnicoComponent},
+  {
+    path: 'tecnico/:id', 
+    component: ProfiletecnicoComponent,
+    children: [
+      {
+        path: 'perfil',
+        component: PerfiltecnicoComponent
+      },
+      {
+        path: 'convocatorias',
+        component: ConvocatoriastecnicoComponent
+      },
+      {
+        path: 'puestoslaborales',
+        component: PuestoslaboralestecnicoComponent
+      },
+      {
+        path: 'seleccion',
+        component: SelecciontecnicoComponent,
+        children: [
+          {
+            path: 'competenciaslaborales',
+            component: CompetenciaslaboralesComponent
+          },
+          {
+            path: 'contratacion',
+            component: ContratacionComponent
+          },
+          {
+            path: 'entrevistafinal',
+            component: EntrevistafinalComponent
+          },
+          {
+            path: 'examenmedico',
+            component: ExamenmedicoComponent
+          },
+          {
+            path: 'pruebapsicologica',
+            component: PruebaspsicologicasComponent
+          },
+          {
+            path: 'testconocimientos',
+            component: TestconocimientosComponent
+          },
+          {
+            path: 'pruebapersonalizada/:id',
+            component: PruebapersonalizadaComponent
+          }
+        ]
+
+      }
+    ]
+  },
   {path: '**', redirectTo: '', pathMatch: 'full'},
 ];
 

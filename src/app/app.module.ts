@@ -26,6 +26,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProfiletecnicoComponent } from './components/profiletecnico/profiletecnico.component';
 import { ConvocatoriasComponent } from './components/profilepostulante/convocatorias/convocatorias.component';
 import { PerfilComponent } from './components/profilepostulante/perfil/perfil.component';
+import { PerfiltecnicoComponent } from './components/profiletecnico/perfiltecnico/perfiltecnico.component';
+import { PuestoslaboralestecnicoComponent } from './components/profiletecnico/puestoslaboralestecnico/puestoslaboralestecnico.component';
+import { ConvocatoriastecnicoComponent } from './components/profiletecnico/convocatoriastecnico/convocatoriastecnico.component';
+import { SelecciontecnicoComponent } from './components/profiletecnico/selecciontecnico/selecciontecnico.component';
+import { TestconocimientosComponent } from './components/profiletecnico/selecciontecnico/testconocimientos/testconocimientos.component';
+import { CompetenciaslaboralesComponent } from './components/profiletecnico/selecciontecnico/competenciaslaborales/competenciaslaborales.component';
+import { PruebaspsicologicasComponent } from './components/profiletecnico/selecciontecnico/pruebaspsicologicas/pruebaspsicologicas.component';
+import { ExamenmedicoComponent } from './components/profiletecnico/selecciontecnico/examenmedico/examenmedico.component';
+import { EntrevistafinalComponent } from './components/profiletecnico/selecciontecnico/entrevistafinal/entrevistafinal.component';
+import { ContratacionComponent } from './components/profiletecnico/selecciontecnico/contratacion/contratacion.component';
+import { PruebapersonalizadaComponent } from './components/profiletecnico/selecciontecnico/pruebapersonalizada/pruebapersonalizada.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +47,17 @@ import { PerfilComponent } from './components/profilepostulante/perfil/perfil.co
     ProfiletecnicoComponent,
     ConvocatoriasComponent,
     PerfilComponent,
+    PerfiltecnicoComponent,
+    PuestoslaboralestecnicoComponent,
+    ConvocatoriastecnicoComponent,
+    SelecciontecnicoComponent,
+    TestconocimientosComponent,
+    CompetenciaslaboralesComponent,
+    PruebaspsicologicasComponent,
+    ExamenmedicoComponent,
+    EntrevistafinalComponent,
+    ContratacionComponent,
+    PruebapersonalizadaComponent,
   ],
   imports: [
     BrowserModule,
