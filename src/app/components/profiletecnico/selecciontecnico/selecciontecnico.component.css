@@ -1,0 +1,126 @@
+a {
+    color: #fff;
+    text-decoration: none;
+    font-family: arial;
+    text-align: center;
+}
+
+.label {
+    position: absolute;
+    padding: 15px 0;
+    width: 100%;
+}
+
+.hexagon {
+    display: inline-block;
+    position: absolute;
+    width: 120px;
+    height: 69.28px;
+    background-color: #64C7CC;
+    margin: 34.64px 0;
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -o-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.hexagon.hover {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    background-color: #F9BF3B;
+    transform: translateY(-4px);
+    box-shadow: 0px 5px 10px black;
+}
+
+.hexagon.active {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    background-color: red;
+    transform: translateY(4px);
+}
+
+.hexagon:before,
+.hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 34.64px solid #64C7CC;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.hexagon.hover:before {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    border-bottom-color: #F9BF3B;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 34.64px solid #64C7CC;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.hexagon.hover:after {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    border-top-color: #F9BF3B;
+}
+
+.menu-list {
+    display: inline-block;
+    height: 150px;
+    width: 620px;
+    position: relative;
+    left: 55%;
+    margin-left: -637.5px;
+}
+
+.hexagon.item-2 {
+    left: 150px;
+}
+
+.hexagon.item-3 {
+    left: 300px;
+}
+
+.hexagon.item-4 {
+    left: 450px;
+}
+
+.hexagon.item-5 {
+    left: 600px;
+}
+
+.hexagon.item-6 {
+    left: 750px;
+}
+
+.hexagon.item-7 {
+    left: 900px;
+}
