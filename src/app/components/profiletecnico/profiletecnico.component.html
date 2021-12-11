@@ -13,7 +13,7 @@
             </mat-icon>
         </button>
     </mat-toolbar>
-    
+
     <mat-sidenav-container>
         <mat-sidenav #sidenav="matSidenav">
             <img class="avatar mat-elevation-z8" src="https://i.ibb.co/YXq9Lsw/fotoprofile.jpg">
@@ -37,10 +37,12 @@
                 <mat-icon>assignment</mat-icon>
                 <span>Convocatorias</span>
             </button>
-            <button mat-button class="menu-button">
+            <a class="text-white" style="text-decoration: none;" routerLink="seleccion">
+                <button mat-button class="menu-button">
                 <mat-icon>assignment</mat-icon>
                 <span>Selección</span>
             </button>
+            </a>
             <button mat-button class="menu-button">
                 <mat-icon>message</mat-icon>
                 <span>Mensajes</span>
@@ -60,26 +62,11 @@
             </button>
         </mat-sidenav>
         <mat-sidenav-content>
-            
+
             <div class="content  mat-elevation-z4">
-                <div class="container">
-                    <hr class="mt-0"/>
-                    <!--Section: Content-->
-                    <section>
-                        <p style="font-size: 45px;color: rgba(61, 139, 202, 1);line-height: 34px;text-align: center;font-family:Arial, Helvetica, sans-serif;font-weight:700;font-style:normal"
-                            class="mb-5 text-center">
-                            <strong>{{titulo | uppercase}}</strong>
-                        </p>
-                        <p>Bienvenido {{profile.nombre_pila}} {{profile.apellidos}}</p>
-                        <p>Sexo: {{profile.sexo}}</p>
-                        <p>Fecha de Nacimiento: {{profile.fec_nac}}</p>
-            
-                    </section>
-                </div>
-                
-                
+                <router-outlet></router-outlet>
             </div>
         </mat-sidenav-content>
     </mat-sidenav-container>
-    
+
 </main>
