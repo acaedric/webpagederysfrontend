@@ -1,4 +1,92 @@
 <div class="row p-4">
+    <section>
+
+        <div class="row">
+            <p class="h2"><strong>COMPETENCIAS LABORALES</strong></p>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <select class="form-select" aria-label="tipopuestolaboral">
+                    <option selected>Tipo de Puesto Laboral</option>
+                    <option>Ing. Software</option>
+                    <option>Analista de Sistemas</option>
+                    <option>Analista SEO</option>
+                    <option>Copywriter</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <select class="form-select" aria-label="tipopuestolaboral">
+                    <option selected>Más recientes</option>
+                    <option>Más antiguos</option>
+                    <option>Más cercanos</option>
+                </select>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-danger">Reporte de Convocatorias</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary" style="background-color:rgb(35, 169, 223)">Añadir Nueva Convocatoria</button>
+            </div>
+        </div>
+        <div class="row mt-4" *ngFor="let postulanteseleccion of seleccionCompetenciasLaborales">
+            <div class="col-4">
+                <div class="row">
+                    <p class="text-uppercase">{{postulanteseleccion.nombre}}</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>place</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>{{postulanteseleccion.correo}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="row">
+                    <p>Fecha: {{postulanteseleccion.fecha_publicac}}</p>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>access_time</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>Convocatoria: {{postulanteseleccion.titulo}}</span>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>work</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>Estado: {{postulanteseleccion.estado}} </span>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-1 ">
+                        <mat-icon>work</mat-icon>
+                    </div>
+                    <div class="col-11">
+                        <span>Puntaje: {{postulanteseleccion.puntaje}} </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="row mt-4 mb-4">
+                    <button class="btn btn-secondary">Detalles</button>
+                </div>
+                <div class="row">
+                    <button class="btn btn-secondary">Editar</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </section>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -11,10 +99,11 @@
                 <th>Puntos</th>
             </tr>
         </thead>
-        <tr>
-            <td>Pedro Gutierrez<br>pedrogut@gmail.com</td>
-            <td>Hace 2 min</td>
-            <td>Analista de Sistemas Junior</td>
+
+        <tr *ngFor="let postulanteseleccion of seleccionCompetenciasLaborales">
+            <td>{{postulanteseleccion.nombre}}<br>{{postulanteseleccion.correo}}</td>
+            <td>{{postulanteseleccion.fecha_publicac}}</td>
+            <td>{{postulanteseleccion.titulo}}</td>
             <td><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                 <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
@@ -23,21 +112,12 @@
                 <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
               </svg></td>
-            <td>Por revisar</td>
-            <td>---</td>
+            <td>{{postulanteseleccion.estado}}</td>
+            <td>{{postulanteseleccion.puntaje}}</td>
             <td><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-              </svg>
-            </td>
-        </tr>
-        <tr>
-            <td>Pedro Gutierrez<br>pedrogut@gmail.com</td>
-            <td>Hace 2 min</td>
-            <td>Analista de Sistemas Junior</td>
-            <td></td>
-            <td>Por revisar</td>
-            <td>---</td>
+              </svg></td>
         </tr>
     </table>
 </div>
