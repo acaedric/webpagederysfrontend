@@ -18,6 +18,7 @@ import { PruebapersonalizadaComponent } from './components/profiletecnico/selecc
 import { PruebaspsicologicasComponent } from './components/profiletecnico/selecciontecnico/pruebaspsicologicas/pruebaspsicologicas.component';
 import { SelecciontecnicoComponent } from './components/profiletecnico/selecciontecnico/selecciontecnico.component';
 import { TestconocimientosComponent } from './components/profiletecnico/selecciontecnico/testconocimientos/testconocimientos.component';
+import { VerificaciondecvComponent } from './components/profiletecnico/selecciontecnico/verificaciondecv/verificaciondecv.component';
 import { RegistrarPostulanteComponent } from './components/registrar-postulante/registrar-postulante.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
@@ -86,6 +87,10 @@ const routes: Routes = [
           {
             path: 'testconocimientos',
             component: TestconocimientosComponent
+          },
+          {
+            path: 'verificaciondecv',
+            component: VerificaciondecvComponent
           },
           {
             path: 'pruebapersonalizada/:id',

@@ -14,6 +14,7 @@ export class PersonaService {
   url2 = 'http://localhost:3000/api/personas/registropostulante/';
   url3 = 'http://localhost:3000/api/personas/login';
   url4 = 'http://localhost:3000/api/personas/profile';
+  url5 = 'http://localhost:3000/api/personas/personasdeseleccion';
   @Output() disparadorDePostulante: EventEmitter<any> = new EventEmitter();
   constructor(private http: HttpClient) { }
 
@@ -31,6 +32,10 @@ export class PersonaService {
 
   profile(id: string): Observable<any> {
     return this.http.get(`${this.url4}/${id}`)
+  }
+
+  getPersonaSeleccion(id: string): Observable<any> {
+    return this.http.get(`${this.url5}/${id}`)
   }
 
 
