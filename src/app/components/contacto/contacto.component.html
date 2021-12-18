@@ -1,0 +1,110 @@
+<app-header></app-header>
+
+<!--Main-->
+<main style="background-color: rgb(255, 255, 255);">
+    
+    <div class="container" style="background-color: rgb(243, 242, 237);" id="contactanos">
+        <hr class="mt-0"/>
+        <!--Section: Content-->
+        <section >
+            <p style="font-size: 45px;color: rgba(61, 139, 202, 1);line-height: 34px;text-align: center;font-family:Arial, Helvetica, sans-serif;font-weight:700;font-style:normal"
+                class="mb-5 text-center">
+                <strong>CONTACTO</strong>
+            </p>
+        
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <form class="shake p-5" [formGroup]="contactoForm" (submit)="contacto()">
+                        <!-- Nombre input -->
+                        <div class="form-outline mb-4 form-group label-floating">
+                            <input type="text" formControlName="nombreconsulta" name="nombreconsulta" id="nombreconsulta" class="form-control" />
+                            <label class="form-label" for="form3Example1">Nombre</label>
+                        </div>
+        
+                        <!-- 2 column grid layout with text inputs for the number and ruc -->
+                        <div class="row mb-4">
+                            <div class="col form-group label-floating">
+                                <div class="form-outline ">
+                                    <input type="number" formControlName="numeroconsulta" name="numeroconsulta" id="numeroconsulta"
+                                        class="form-control" />
+                                    <label class="form-label" for="form3Example4">Número</label>
+                                </div>
+                            </div>
+                            <div class="col form-group label-floating">
+                                <div class="form-outline ">
+                                    <input type="text" formControlName="rucconsulta" name="rucconsulta" id="rucconsulta" class="form-control" />
+                                    <label class="form-label" for="form3Example2">RUC</label>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Email input -->
+                        <div class="form-outline mb-4 form-group label-floating">
+                            <input type="email" formControlName="correoconsulta" name="correoconsulta" id="correoconsulta" class="form-control" />
+                            <label class="form-label" for="form3Example3">Correo</label>
+                        </div>
+        
+                        <!-- Mensage input -->
+                        <div class="form-outline mb-4 form-group label-floating">
+                            <textarea type="text" name="mensajeconsulta" formControlName="mensajeconsulta" class="form-control" id="mensajeconsulta"
+                                rows="4"></textarea>
+                            <label class="form-label" for="form3Example5">Mensaje</label>
+                        </div>
+                        <!-- Checkbox -->
+                        <!-- <div class="form-check d-flex justify-content-center mb-4 form-group label-floating">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="checkconsulta"
+                                checked />
+                            <label class="form-check-label" for="form2Example3">
+                                Está de acuerdo en que se le contacte al número
+                            </label>
+                        </div> -->
+                        <!-- Archivo input -->
+                        <p>Opcional</p>
+                        <div class="form-outline mb-4 form-group label-floating">
+                            <input type="file" (change)="capturarFile($event)" formControlName="archivoconsulta" name="archivoconsulta" id="archivoconsulta" class="form-control" />
+                        </div>
+                        <!-- Submit button -->
+                        <button type="submit" style="background-color: rgba(38, 168, 223, 1)"
+                            class="btn btn-primary btn-block mb-4">
+                            Enviar
+                        </button>
+        
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!--Section: Content-->        
+    </div>
+</main>
+<!--Main-->
+
+<!--Footer-->
+<footer class="bg-light text-lg-start">
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+        <p style="font-size: large;">Síguenos en nuestras Redes Sociales</p>
+        <a style="background-color: rgba(0, 172, 233, 1);" href="https://www.facebook.com/" class="btn btn-primary m-1"
+            role="button" rel="nofollow" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a style="background-color: rgb(11, 160, 18);"
+            href="https://api.whatsapp.com/send?phone=+51967887020&text=Hola,%20deseo%20saber%20más%20de%20sus%20servicios."
+            class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a style="background-color: rgb(105, 168, 219);"
+            href="https://www.linkedin.com/company/corporativa-grafimar/about/?viewAsMember=true"
+            class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(61, 139, 202, 0.8); color: white">
+        © 2021 Copyright:
+        <a class="text-white" style="color: white;" href="https://corporativagrafimar.com/"><strong>4Data Recruitment &
+                Selection</strong></a>
+    </div>
+    <!-- Copyright -->
+</footer>

@@ -1,26 +1,64 @@
 <app-header></app-header>
+<main style="background-color: rgb(255, 255, 255);">
+    
+    <div class="container" style="background-color: rgb(243, 242, 237);" id="contactanos">
+        <!--Section: Content-->
+        <section >
+            <div class="row">
+                <div class="col-md-4 mx-auto p-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Ingresa tus datos de usuario
+                        </div>
+                        <div class="card-body">
+                            <form [formGroup]="usuarioForm" (submit)="signIn()">
+                                <div class="form-group mb-2">
+                                    <input type="text" formControlName="nombre_usuario" name="nombre_usuario" class="form-control" placeholder="Nombre de Usuario" required autofocus>
+                                </div>
+                                <div class="form-group mb-2">
+                                    <input type="password" formControlName="password"  name="password" class="form-control" placeholder="Contraseña" required>
+                                </div>
+                                <!-- [routerLink]="['/profile', producto._id]" -->
 
-<div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card">
-            <div class="card-header">
-                SignIn
-            </div>
-            <div class="card-body">
-                <form [formGroup]="usuarioForm" (submit)="signIn()">
-                    <div class="form-group">
-                        <input type="text" formControlName="nombre_usuario" name="nombre_usuario" class="form-control" placeholder="Nombre de Usuario" required autofocus>
+                                <button  class="btn btn-success btn-block">
+                                    Iniciar Sesión
+                                </button>
+                            </form>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" formControlName="password"  name="password" class="form-control" placeholder="Password" required>
-                    </div>
-                    <!-- [routerLink]="['/profile', producto._id]" -->
-
-                    <button  class="btn btn-success btn-block">
-                        SignIn
-                    </button>
-                </form>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
-</div>
+</main>
+
+<!--Footer-->
+<footer class="bg-light text-lg-start">
+    <hr class="m-0" />
+
+    <div class="text-center py-4 align-items-center">
+        <p style="font-size: large;">Síguenos en nuestras Redes Sociales</p>
+        <a style="background-color: rgba(0, 172, 233, 1);" href="https://www.facebook.com/" class="btn btn-primary m-1"
+            role="button" rel="nofollow" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a style="background-color: rgb(11, 160, 18);"
+            href="https://api.whatsapp.com/send?phone=+51967887020&text=Hola,%20deseo%20saber%20más%20de%20sus%20servicios."
+            class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a style="background-color: rgb(105, 168, 219);"
+            href="https://www.linkedin.com/company/corporativa-grafimar/about/?viewAsMember=true"
+            class="btn btn-primary m-1" role="button" rel="nofollow" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(61, 139, 202, 0.8); color: white">
+        © 2021 Copyright:
+        <a class="text-white" style="color: white;" href="https://corporativagrafimar.com/"><strong>4Data Recruitment &
+                Selection</strong></a>
+    </div>
+    <!-- Copyright -->
+</footer>

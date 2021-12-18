@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ContactoComponent } from './components/contacto/contacto.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { ListarPersonasComponent } from './components/listar-personas/listar-personas.component';
@@ -20,6 +21,7 @@ import { SelecciontecnicoComponent } from './components/profiletecnico/seleccion
 import { TestconocimientosComponent } from './components/profiletecnico/selecciontecnico/testconocimientos/testconocimientos.component';
 import { VerificaciondecvComponent } from './components/profiletecnico/selecciontecnico/verificaciondecv/verificaciondecv.component';
 import { RegistrarPostulanteComponent } from './components/registrar-postulante/registrar-postulante.component';
+import { TrabajosComponent } from './components/trabajos/trabajos.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
@@ -27,6 +29,8 @@ const routes: Routes = [
   {path: '', component: InicioComponent, data:{title: '4DATA || Encuentra el puesto o la persona adecuada en este mundo digital'}},
   {path: 'listar-personas', component: ListarPersonasComponent },
   {path: 'registrar-postulante', component: RegistrarPostulanteComponent},
+  {path: 'trabajos', component: TrabajosComponent},
+  {path: 'contacto', component: ContactoComponent},
   {path: 'editar-postulante/:id', component: RegistrarPostulanteComponent},
   {path: 'login', component: IniciarSesionComponent},
   {

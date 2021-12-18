@@ -38,6 +38,8 @@ import { EntrevistafinalComponent } from './components/profiletecnico/selecciont
 import { ContratacionComponent } from './components/profiletecnico/selecciontecnico/contratacion/contratacion.component';
 import { PruebapersonalizadaComponent } from './components/profiletecnico/selecciontecnico/pruebapersonalizada/pruebapersonalizada.component';
 import { VerificaciondecvComponent } from './components/profiletecnico/selecciontecnico/verificaciondecv/verificaciondecv.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { TrabajosComponent } from './components/trabajos/trabajos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +62,8 @@ import { VerificaciondecvComponent } from './components/profiletecnico/seleccion
     ContratacionComponent,
     PruebapersonalizadaComponent,
     VerificaciondecvComponent,
+    ContactoComponent,
+    TrabajosComponent,
   ],
   imports: [
     BrowserModule,
