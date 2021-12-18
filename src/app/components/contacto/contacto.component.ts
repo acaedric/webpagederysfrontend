@@ -67,6 +67,9 @@ export class ContactoComponent implements OnInit {
     });
     console.log(contactorealizado);
     console.log("Mostrando el NUEVO Formulario: ", this.contactoForm);
+    this.contactoForm.reset()
+    this.toastr.success('Contacto realizado con éxito', 'Revise su correo.');
+    this.router.navigate(['/contacto']);
 
   }
 

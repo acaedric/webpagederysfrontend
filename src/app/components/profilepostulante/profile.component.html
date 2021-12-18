@@ -13,10 +13,11 @@
             </mat-icon>
         </button>
     </mat-toolbar>
-    
+
     <mat-sidenav-container>
         <mat-sidenav #sidenav="matSidenav">
-            <img class="avatar mat-elevation-z8" src="https://i.ibb.co/YXq9Lsw/fotoprofile.jpg">
+            <img *ngIf="this.nombre_usuario !== 'silerms'" class="avatar mat-elevation-z8" src="https://i.ibb.co/YXq9Lsw/fotoprofile.jpg">
+            <img *ngIf="this.nombre_usuario == 'silerms'" class="avatar mat-elevation-z8" src="https://i.ibb.co/KVs6kcK/img031.jpg">
             <h4 class="name">{{profile.nombre_pila}} {{profile.apellidos}}</h4>
             <p class="designation">Software Engineer</p>
             <mat-divider></mat-divider>
@@ -26,18 +27,18 @@
                 <span>Inicio</span>
             </button>
             <a class="text-white" style="text-decoration: none;" (click)="enviarPostulante()" routerLink="perfil">
-                <button mat-button class="menu-button" >
+                <button mat-button class="menu-button">
                     <mat-icon>person</mat-icon>
                     <span>Profile</span>
                 </button>
             </a>
-            <a class="text-white" style="text-decoration: none;" (click)="enviarPostulante()" routerLink="convocatorias" >
+            <a class="text-white" style="text-decoration: none;" (click)="enviarPostulante()" routerLink="convocatorias">
                 <button mat-button class="menu-button">
                     <mat-icon>assignment</mat-icon>
                     <span>Convocatorias</span>
                 </button>
             </a>
-           
+
             <button mat-button class="menu-button">
                 <mat-icon>message</mat-icon>
                 <span>Mensajes</span>
@@ -57,14 +58,14 @@
             </button>
         </mat-sidenav>
         <mat-sidenav-content>
-            
+
             <div class=" content mat-elevation-z4">
-                
+
                 <router-outlet></router-outlet>
-                
+
             </div>
 
         </mat-sidenav-content>
     </mat-sidenav-container>
-    
+
 </main>
